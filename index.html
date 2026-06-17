@@ -34,7 +34,7 @@
   "description": "Off-grid and solar experts installing premium solar and battery systems across Tasmania.",
   "areaServed": { "@type": "State", "name": "Tasmania" },
   "address": { "@type": "PostalAddress", "addressRegion": "TAS", "addressCountry": "AU" },
-  "telephone": "+61-000-000-000",
+  "telephone": "+61-487-308-888",
   "priceRange": "$$",
   "slogan": "Your off-grid and solar experts",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "120" }
@@ -100,6 +100,10 @@ a{color:inherit;text-decoration:none}
 .btn--ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.35)}
 .btn--ghost:hover{border-color:var(--cyan);box-shadow:0 0 22px rgba(70,214,240,.3);color:#fff}
 .btn--lg{padding:1.15rem 2.4rem;font-size:1.12rem}
+.btn svg{width:18px;height:18px;stroke:currentColor}
+.btn--outline{background:transparent;color:var(--navy);border:1.5px solid var(--line)}
+.btn--outline:hover{border-color:var(--cyan);box-shadow:0 0 18px rgba(45,187,216,.22)}
+.cta-row{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
 
 /* ---------- Header ---------- */
 header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s var(--ease), box-shadow .3s var(--ease), backdrop-filter .3s}
@@ -358,7 +362,7 @@ footer{background:var(--navy-900);color:#cfe0f5;padding:clamp(48px,7vw,72px) 0 2
       <a class="link" href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
-      <a class="callbtn" href="tel:+61000000000" aria-label="Call Brighter Energy">
+      <a class="callbtn" href="tel:+61487308888" aria-label="Call Brighter Energy">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
         Call us
       </a>
@@ -377,7 +381,7 @@ footer{background:var(--navy-900);color:#cfe0f5;padding:clamp(48px,7vw,72px) 0 2
   <a href="#proof">Reviews</a>
   <a href="#faq">FAQ</a>
   <a class="btn" href="#quote">Get My Free Quote</a>
-  <a class="callbtn" href="tel:+61000000000" style="color:#fff">Call us</a>
+  <a class="callbtn" href="tel:+61487308888" style="color:#fff">Call us</a>
 </div>
 
 <!-- ============ HERO ============ -->
@@ -388,7 +392,10 @@ footer{background:var(--navy-900);color:#cfe0f5;padding:clamp(48px,7vw,72px) 0 2
       <span class="eyebrow reveal" id="h-eyebrow">Off-grid &amp; solar experts · Tasmania</span>
       <h1 class="reveal" id="h-title">Cut your power bill with solar built for <span class="hl">Tasmanian</span> conditions.</h1>
       <p class="sub reveal" id="h-sub">Brighter Energy designs, installs and backs premium solar &amp; battery systems across Tasmania — with a clear quote in 24 hours and zero pushy sales.</p>
-      <a class="btn btn--lg reveal" href="#quote" id="h-cta">Get My Free Quote →</a>
+      <div class="cta-row reveal" id="h-cta">
+        <a class="btn btn--lg" href="#quote">Get My Free Quote →</a>
+        <a class="btn btn--lg btn--ghost" href="tel:+61487308888"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg> Call Now</a>
+      </div>
       <div class="proof-strip reveal" id="h-proof">
         <span class="stars">★★★★★</span>
         <span class="meta"><b>4.9</b> from local homeowners · 200+ Tassie roofs powered</span>
@@ -400,7 +407,7 @@ footer{background:var(--navy-900);color:#cfe0f5;padding:clamp(48px,7vw,72px) 0 2
       </div>
     </div>
     <div class="hero-card reveal">
-      <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80" alt="Solar panels installed on a residential rooftop at sunrise in Tasmania" loading="eager" onerror="imgFail(this,'Rooftop solar install')"/>
+      <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=90" alt="High-efficiency solar panels installed against a bright blue Tasmanian sky" loading="eager" onerror="imgFail(this,'Rooftop solar install')"/>
       <div class="tag">Avg homeowner saves <b>$1,400+/yr</b> on power</div>
     </div>
   </div>
@@ -573,6 +580,10 @@ footer{background:var(--navy-900);color:#cfe0f5;padding:clamp(48px,7vw,72px) 0 2
         <a class="btn" href="#quote">Get pricing</a>
       </div>
     </div>
+    <div class="cta-row reveal" style="justify-content:center;margin-top:2.4rem">
+      <a class="btn btn--lg" href="#quote">Get My Free Quote →</a>
+      <a class="btn btn--lg btn--outline" href="tel:+61487308888"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg> Call Now</a>
+    </div>
     <p class="finetip reveal">Tasmanian homeowners may access the State Government's 0% interest Energy Saver Loan. Ask us how it applies to your quote.</p>
   </div>
 </section>
@@ -608,6 +619,9 @@ footer{background:var(--navy-900);color:#cfe0f5;padding:clamp(48px,7vw,72px) 0 2
         <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> No obligation</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Reply within 24 hrs</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Tasmanian-owned</span>
+      </div>
+      <div class="cta-row reveal" style="margin-top:1.9rem">
+        <a class="btn btn--lg btn--ghost" href="tel:+61487308888"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg> Call Now — 0487 308 888</a>
       </div>
     </div>
 
@@ -670,14 +684,14 @@ footer{background:var(--navy-900);color:#cfe0f5;padding:clamp(48px,7vw,72px) 0 2
       </div>
       <div>
         <h4>Contact</h4>
-        <a href="tel:+61000000000">Call: 0400 000 000</a>
+        <a href="tel:+61487308888">Call: 0487 308 888</a>
         <a href="mailto:hello@brighterenergy.com.au">hello@brighterenergy.com.au</a>
         <a href="#quote">Get a free quote</a>
         <a href="#top">Servicing all of Tasmania</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© <span id="yr"></span> Brighter Energy Tasmania. All rights reserved. · ABN 00 000 000 000</span>
+      <span>© <span id="yr"></span> Brighter Energy Tasmania. All rights reserved. · ABN 77 478 194 363</span>
       <span>Hobart · Launceston · Devonport · Statewide</span>
     </div>
   </div>
@@ -686,7 +700,7 @@ footer{background:var(--navy-900);color:#cfe0f5;padding:clamp(48px,7vw,72px) 0 2
 <!-- mobile sticky CTA -->
 <div class="mobcta">
   <a class="btn" href="#quote">Free Quote</a>
-  <a class="btn btn--ghost" href="tel:+61000000000" aria-label="Call now">Call</a>
+  <a class="btn btn--ghost" href="tel:+61487308888" aria-label="Call now">Call</a>
 </div>
 
 <div class="cursor-dot" id="cursor" aria-hidden="true"></div>
