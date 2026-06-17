@@ -294,8 +294,8 @@ footer{background:var(--navy-900);color:#cfe0f5;padding:clamp(48px,7vw,72px) 0 2
 /* cursor dot (desktop) */
 .cursor-dot{position:fixed;top:0;left:0;width:9px;height:9px;border-radius:50%;background:var(--cyan);pointer-events:none;z-index:99;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:screen}
 
-/* reveal default state */
-.reveal{opacity:0;transform:translateY(28px)}
+/* reveal default state — only hidden while animations are armed */
+.anim .reveal{opacity:0;transform:translateY(28px)}
 
 /* ---------- Responsive ---------- */
 @media (max-width:980px){
@@ -329,6 +329,10 @@ footer{background:var(--navy-900);color:#cfe0f5;padding:clamp(48px,7vw,72px) 0 2
 </style>
 </head>
 <body>
+<script>
+/* Arm animations only if GSAP can run and motion is allowed; otherwise content stays visible. */
+(function(){try{var ok=('requestAnimationFrame' in window)&&!matchMedia('(prefers-reduced-motion: reduce)').matches;if(ok)document.documentElement.classList.add('anim');}catch(e){}})();
+</script>
 
 <!-- ============ HEADER ============ -->
 <header id="header">
@@ -381,11 +385,11 @@ footer{background:var(--navy-900);color:#cfe0f5;padding:clamp(48px,7vw,72px) 0 2
   <div class="blob b1"></div><div class="blob b2"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow" id="h-eyebrow">Off-grid &amp; solar experts · Tasmania</span>
-      <h1 id="h-title">Cut your power bill with solar built for <span class="hl">Tasmanian</span> conditions.</h1>
-      <p class="sub" id="h-sub">Brighter Energy designs, installs and backs premium solar &amp; battery systems across Tasmania — with a clear quote in 24 hours and zero pushy sales.</p>
-      <a class="btn btn--lg" href="#quote" id="h-cta">Get My Free Quote →</a>
-      <div class="proof-strip" id="h-proof">
+      <span class="eyebrow reveal" id="h-eyebrow">Off-grid &amp; solar experts · Tasmania</span>
+      <h1 class="reveal" id="h-title">Cut your power bill with solar built for <span class="hl">Tasmanian</span> conditions.</h1>
+      <p class="sub reveal" id="h-sub">Brighter Energy designs, installs and backs premium solar &amp; battery systems across Tasmania — with a clear quote in 24 hours and zero pushy sales.</p>
+      <a class="btn btn--lg reveal" href="#quote" id="h-cta">Get My Free Quote →</a>
+      <div class="proof-strip reveal" id="h-proof">
         <span class="stars">★★★★★</span>
         <span class="meta"><b>4.9</b> from local homeowners · 200+ Tassie roofs powered</span>
       </div>
@@ -759,26 +763,28 @@ if(matchMedia('(pointer:fine)').matches){
   });
 }else{dot.style.display='none';}
 
-/* ---------- GSAP animations ---------- */
+/* ---------- GSAP animations (visible-by-default, with safety net) ---------- */
+function showAll(){document.documentElement.classList.remove('anim');}
 window.addEventListener('load',()=>{
-  if(typeof gsap==='undefined')return;
+  // Safety net: no matter what, reveal everything shortly after load
+  // (covers GSAP failing to load, reduced-motion, or rAF being throttled in a background tab).
+  setTimeout(showAll,2600);
+
+  if(typeof gsap==='undefined'||!document.documentElement.classList.contains('anim')){showAll();return;}
   gsap.registerPlugin(ScrollTrigger);
 
-  // Hero entry stagger
-  gsap.timeline({defaults:{ease:'power3.out'}})
-    .from('#h-eyebrow',{y:20,opacity:0,duration:.5})
-    .from('#h-title',{y:28,opacity:0,duration:.6},'-=.25')
-    .from('#h-sub',{y:24,opacity:0,duration:.55},'-=.35')
-    .from('#h-cta',{y:20,opacity:0,duration:.5},'-=.35')
-    .from('#h-proof',{y:18,opacity:0,duration:.5},'-=.3')
-    .from('.hero-card',{y:40,opacity:0,duration:.7,clipPath:'inset(8% 8% 8% 8%)'},'-=.55');
+  // Hero entry stagger (animate TO visible)
+  gsap.to(['#h-eyebrow','#h-title','#h-sub','#h-cta','#h-proof'],
+    {opacity:1,y:0,duration:.6,stagger:.12,ease:'power3.out'});
+  gsap.to('.hero-card',{opacity:1,y:0,duration:.75,delay:.35,ease:'power3.out'});
 
   // Scroll reveals
   gsap.utils.toArray('.reveal').forEach(el=>{
     if(el.closest('.hero'))return;
     gsap.to(el,{y:0,opacity:1,duration:.7,ease:'power3.out',
-      scrollTrigger:{trigger:el,start:'top 85%',once:true}});
+      scrollTrigger:{trigger:el,start:'top 88%',once:true}});
   });
+  ScrollTrigger.refresh();
 
   // hero blob parallax to mouse
   addEventListener('mousemove',e=>{
