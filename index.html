@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Solar Panels Tasmania | Brighter Energy — Off-Grid &amp; Solar Experts (Hobart, Launceston, Statewide)</title>
+<meta name="description" content="Brighter Energy Tasmania designs and installs premium solar and off-grid systems for Tasmanian homes. Get a clear, no-pressure solar quote in 24 hours. CEC-accredited local installers. Servicing Hobart, Launceston, Devonport &amp; statewide." />
+<meta name="keywords" content="solar panels Tasmania, solar Hobart, solar Launceston, off-grid solar Tasmania, battery storage Tasmania, solar installers Tasmania, solar quote Tasmania" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#0A1A3C" />
+<link rel="canonical" href="https://brighter-energy-tas.example/" />
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Solar Panels Tasmania | Brighter Energy" />
+<meta property="og:description" content="Premium solar &amp; off-grid systems for Tasmanian homes. Clear quote in 24 hours. CEC-accredited local installers." />
+<meta property="og:locale" content="en_AU" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<!-- LocalBusiness structured data (SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SolarEnergyContractor",
+  "name": "Brighter Energy Tasmania",
+  "description": "Off-grid and solar experts installing premium solar and battery systems across Tasmania.",
+  "areaServed": { "@type": "State", "name": "Tasmania" },
+  "address": { "@type": "PostalAddress", "addressRegion": "TAS", "addressCountry": "AU" },
+  "telephone": "+61-000-000-000",
+  "priceRange": "$$",
+  "slogan": "Your off-grid and solar experts",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "120" }
+}
+</script>
+
+<style>
+:root{
+  /* Brand DNA extracted from logo */
+  --navy-900:#06122B;
+  --navy:#0A1A3C;
+  --navy-700:#10254F;
+  --navy-600:#16335f;
+  --cyan:#2DBBD8;
+  --cyan-bright:#46D6F0;
+  --green:#41C28A;
+  --surface:#F4F8FC;
+  --surface-2:#EAF1F8;
+  --white:#FFFFFF;
+  --ink:#0A1A3C;
+  --muted:#5A6B86;
+  --muted-dark:#9DB4D4;
+  --line:rgba(10,26,60,.10);
+  --radius:16px;
+  --radius-lg:22px;
+  --shadow-1:0 8px 24px rgba(10,26,60,.06);
+  --shadow-2:0 14px 34px rgba(10,26,60,.10), 0 6px 14px rgba(10,26,60,.06);
+  --shadow-hover:0 22px 50px rgba(10,26,60,.16), 0 8px 18px rgba(10,26,60,.10);
+  --maxw:1280px;
+  --gutter:clamp(20px,5vw,64px);
+  --section-y:clamp(72px,12vw,150px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Space Grotesk','Inter',sans-serif;line-height:1.05;letter-spacing:-.01em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-family:'Space Grotesk';text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:600;color:var(--cyan)}
+.section{padding:var(--section-y) 0}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.55em;
+  font-family:'Space Grotesk';font-weight:600;font-size:1.02rem;
+  padding:1rem 1.8rem;border-radius:999px;cursor:pointer;border:0;
+  background:linear-gradient(135deg,var(--cyan),var(--cyan-bright));
+  color:var(--navy-900);
+  transition:transform .2s var(--ease), box-shadow .2s var(--ease), filter .2s var(--ease);
+  box-shadow:0 0 0 rgba(45,187,216,0);
+  position:relative;white-space:nowrap;
+}
+.btn:hover{transform:scale(1.02);filter:brightness(1.06);box-shadow:0 0 28px 6px rgba(70,214,240,.45)}
+.btn--ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.35)}
+.btn--ghost:hover{border-color:var(--cyan);box-shadow:0 0 22px rgba(70,214,240,.3);color:#fff}
+.btn--lg{padding:1.15rem 2.4rem;font-size:1.12rem}
+
+/* ---------- Header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s var(--ease), box-shadow .3s var(--ease), backdrop-filter .3s}
+header.scrolled{background:rgba(10,26,60,.72);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:.6rem}
+.brand svg{height:42px;width:auto}
+.navlinks{display:flex;align-items:center;gap:2rem}
+.navlinks a{color:#fff;font-size:.95rem;font-weight:500;position:relative;opacity:.9}
+.navlinks a.link::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:100%;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
+.navlinks a.link:hover::after{transform:scaleX(1)}
+.nav-cta{display:flex;align-items:center;gap:1.1rem}
+.callbtn{color:#fff;font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:.4rem}
+.callbtn svg{width:16px;height:16px;stroke:var(--cyan)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.hamburger span{width:26px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+
+/* mobile overlay */
+.overlay{position:fixed;inset:0;background:var(--navy);z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;transform:translateY(-100%);transition:transform .45s var(--ease)}
+.overlay.open{transform:translateY(0)}
+.overlay a{color:#fff;font-family:'Space Grotesk';font-size:1.6rem;font-weight:600}
+.overlay .close{position:absolute;top:24px;right:24px;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;background:radial-gradient(120% 120% at 80% -10%,#11295a 0%,var(--navy) 45%,var(--navy-900) 100%);color:#fff;overflow:hidden;padding-top:140px;padding-bottom:clamp(60px,9vw,110px)}
+.hero .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;will-change:transform}
+.hero .blob.b1{width:520px;height:520px;background:radial-gradient(circle,rgba(45,187,216,.55),transparent 70%);top:-160px;right:-120px}
+.hero .blob.b2{width:420px;height:420px;background:radial-gradient(circle,rgba(65,194,138,.35),transparent 70%);bottom:-160px;left:-120px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.6rem,6vw,5rem);font-weight:700}
+.hero h1 .hl{color:var(--cyan)}
+.hero .sub{font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--muted-dark);margin:1.4rem 0 2.2rem;max-width:34ch}
+.proof-strip{display:flex;align-items:center;gap:1.4rem;margin-top:2.2rem;flex-wrap:wrap}
+.stars{color:#FFC83D;letter-spacing:2px;font-size:1.05rem}
+.proof-strip .meta{color:var(--muted-dark);font-size:.92rem}
+.proof-badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.badge{font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:#cfe0f5;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.4rem .8rem}
+.hero-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45);aspect-ratio:4/5;background:#0c1f44}
+.hero-card img{width:100%;height:100%;object-fit:cover}
+.hero-card .tag{position:absolute;left:16px;bottom:16px;background:rgba(10,26,60,.78);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);padding:.7rem 1rem;border-radius:12px;font-size:.85rem}
+.hero-card .tag b{color:var(--cyan)}
+
+/* image fallback */
+.imgfallback{background:linear-gradient(135deg,var(--navy-700),var(--navy));display:flex;align-items:center;justify-content:center;color:var(--muted-dark);font-size:.85rem;text-align:center;padding:1rem;height:100%;width:100%}
+
+/* ---------- Problem ---------- */
+.problem{background:var(--surface)}
+.problem .lines{max-width:880px;margin:0 auto;text-align:center}
+.problem h2{font-size:clamp(1.9rem,3.6vw,3rem);font-weight:700;margin-bottom:1.4rem}
+.problem p{font-size:clamp(1.1rem,1.8vw,1.45rem);color:var(--muted);line-height:1.5}
+.problem p+p{margin-top:1rem}
+
+/* ---------- Shift ---------- */
+.shift-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.shift h2{font-size:clamp(1.9rem,3.6vw,3rem);font-weight:700;margin:.6rem 0 1.2rem}
+.shift p{color:var(--muted);font-size:1.08rem;max-width:46ch}
+.shift ul{list-style:none;margin-top:1.6rem;display:grid;gap:1rem}
+.shift li{display:flex;gap:.8rem;align-items:flex-start;font-weight:500}
+.shift li svg{flex:0 0 auto;width:24px;height:24px;margin-top:2px}
+.shift-media{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-2);aspect-ratio:5/4;background:#0c1f44}
+.shift-media img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- How it works ---------- */
+.how{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.how .head{text-align:center;max-width:680px;margin:0 auto clamp(40px,6vw,68px)}
+.how h2{font-size:clamp(1.9rem,3.6vw,3rem);font-weight:700;margin-top:.5rem}
+.how .head p{color:var(--muted-dark);margin-top:1rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.4vw,32px)}
+.step{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:2.2rem 1.8rem;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s;position:relative}
+.step:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.4);border-color:rgba(45,187,216,.5)}
+.step .num{font-family:'Space Grotesk';font-weight:700;font-size:4.4rem;line-height:1;color:rgba(45,187,216,.22);position:absolute;top:1rem;right:1.4rem}
+.step .ic{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(45,187,216,.14);margin-bottom:1.2rem}
+.step .ic svg{width:28px;height:28px;stroke:var(--cyan)}
+.step h3{font-size:1.3rem;margin-bottom:.5rem;font-weight:600}
+.step p{color:var(--muted-dark);font-size:.98rem}
+
+/* ---------- Social proof ---------- */
+.proof{background:var(--surface)}
+.proof .head{text-align:center;max-width:760px;margin:0 auto clamp(34px,5vw,56px)}
+.proof h2{font-size:clamp(1.9rem,3.6vw,3rem);font-weight:700;margin-top:.5rem}
+.pullquote{max-width:920px;margin:0 auto clamp(34px,5vw,52px);text-align:center;font-family:'Space Grotesk';font-weight:600;font-size:clamp(1.5rem,3.2vw,2.4rem);line-height:1.25}
+.pullquote .q{color:var(--cyan)}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:1.4rem;width:max-content;animation:scrollx 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+.tcard{width:360px;flex:0 0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;box-shadow:var(--shadow-1)}
+.tcard .stars{font-size:.95rem;margin-bottom:.7rem}
+.tcard p{color:var(--ink);font-size:1rem}
+.tcard .who{display:flex;align-items:center;gap:.7rem;margin-top:1.1rem}
+.tcard .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--green));display:flex;align-items:center;justify-content:center;color:#06122B;font-weight:700;font-family:'Space Grotesk'}
+.tcard .who b{display:block;font-size:.92rem}
+.tcard .who span{font-size:.82rem;color:var(--muted)}
+
+/* ---------- Services (alternating) ---------- */
+.services .head{text-align:center;max-width:680px;margin:0 auto clamp(40px,6vw,70px)}
+.services h2{font-size:clamp(1.9rem,3.6vw,3rem);font-weight:700;margin-top:.5rem}
+.srow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center;margin-bottom:clamp(48px,7vw,96px)}
+.srow:last-child{margin-bottom:0}
+.srow.rev .stext{order:2}
+.srow .smedia{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-2);aspect-ratio:5/4;background:#0c1f44}
+.srow .smedia img{width:100%;height:100%;object-fit:cover}
+.srow h3{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;margin:.5rem 0 .9rem}
+.srow p{color:var(--muted);font-size:1.05rem}
+.srow .feat{margin-top:1.2rem;display:grid;gap:.6rem}
+.srow .feat span{display:flex;gap:.6rem;align-items:center;font-weight:500;font-size:.98rem}
+.srow .feat svg{width:20px;height:20px;stroke:var(--green);flex:0 0 auto}
+
+/* ---------- Benefits / packages ---------- */
+.pkg{background:var(--surface)}
+.pkg .head{text-align:center;max-width:680px;margin:0 auto clamp(40px,6vw,64px)}
+.pkg h2{font-size:clamp(1.9rem,3.6vw,3rem);font-weight:700;margin-top:.5rem}
+.pkg .head p{color:var(--muted);margin-top:1rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,28px);align-items:stretch}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:2.2rem 1.9rem;box-shadow:var(--shadow-1);display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.pcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
+.pcard.elevated{background:var(--navy);color:#fff;border:0;box-shadow:0 26px 60px rgba(10,26,60,.28);transform:translateY(-10px) scale(1.02)}
+.pcard.elevated:hover{transform:translateY(-14px) scale(1.02)}
+.pcard .pop{display:inline-block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;background:var(--cyan);color:#06122B;font-weight:700;padding:.3rem .7rem;border-radius:999px;margin-bottom:1rem;width:max-content}
+.pcard h3{font-size:1.35rem;font-weight:700;margin-bottom:.3rem}
+.pcard .for{color:var(--muted);font-size:.92rem;margin-bottom:1.2rem}
+.pcard.elevated .for{color:var(--muted-dark)}
+.pcard ul{list-style:none;display:grid;gap:.7rem;margin:0 0 1.6rem}
+.pcard li{display:flex;gap:.55rem;align-items:flex-start;font-size:.96rem}
+.pcard li svg{width:19px;height:19px;stroke:var(--cyan);flex:0 0 auto;margin-top:3px}
+.pcard.elevated li svg{stroke:var(--cyan-bright)}
+.pcard .btn{margin-top:auto;justify-content:center}
+.pcard:not(.elevated) .btn{background:var(--navy);color:#fff}
+.pcard:not(.elevated) .btn:hover{box-shadow:0 0 22px rgba(10,26,60,.25)}
+.finetip{text-align:center;color:var(--muted);font-size:.9rem;margin-top:1.8rem}
+
+/* ---------- FAQ ---------- */
+.faq .head{text-align:center;max-width:640px;margin:0 auto clamp(36px,5vw,56px)}
+.faq h2{font-size:clamp(1.9rem,3.6vw,3rem);font-weight:700;margin-top:.5rem}
+.acc{max-width:820px;margin:0 auto;display:grid;gap:.9rem}
+.item{border:1px solid var(--line);border-radius:var(--radius);background:#fff;overflow:hidden}
+.q{display:flex;justify-content:space-between;align-items:center;gap:1rem;width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:1.25rem 1.4rem;font-family:'Space Grotesk';font-weight:600;font-size:1.05rem;color:var(--ink)}
+.q .chev{flex:0 0 auto;width:22px;height:22px;transition:transform .35s var(--ease);stroke:var(--cyan)}
+.item.open .chev{transform:rotate(180deg)}
+.a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.a p{padding:0 1.4rem 1.3rem;color:var(--muted)}
+
+/* ---------- Final CTA + form ---------- */
+.final{position:relative;background:radial-gradient(120% 130% at 50% 0%,#11295a,var(--navy) 55%,var(--navy-900));color:#fff;overflow:hidden}
+.final .ring{position:absolute;width:760px;height:760px;border-radius:50%;left:50%;top:46%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(45,187,216,.18),transparent 60%);animation:breathe 4s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:.9;transform:translate(-50%,-50%) scale(1.08)}}
+.final-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px);align-items:center}
+.final h2{font-size:clamp(2rem,4.4vw,3.4rem);font-weight:700}
+.final h2 .hl{color:var(--cyan)}
+.final .sub{color:var(--muted-dark);font-size:1.12rem;margin:1.2rem 0 1.8rem;max-width:40ch}
+.final .reassure{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:1.6rem;color:var(--muted-dark);font-size:.9rem}
+.final .reassure span{display:flex;align-items:center;gap:.45rem}
+.final .reassure svg{width:17px;height:17px;stroke:var(--green)}
+
+/* form */
+.formcard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius-lg);padding:clamp(1.6rem,3vw,2.4rem);backdrop-filter:blur(10px);box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.formcard h3{font-size:1.4rem;font-weight:700;margin-bottom:.4rem}
+.formcard .fnote{color:var(--muted-dark);font-size:.92rem;margin-bottom:1.4rem}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:.85rem;font-weight:500;margin-bottom:.4rem;color:#cfe0f5}
+.field input{width:100%;padding:.95rem 1.1rem;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;font-size:1rem;font-family:inherit;transition:border-color .2s, box-shadow .2s}
+.field input::placeholder{color:#7d92b5}
+.field input:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(45,187,216,.2)}
+.hp{position:absolute;left:-9999px;opacity:0}
+.formcard .btn{width:100%;justify-content:center;margin-top:.4rem}
+.formcard .legal{font-size:.78rem;color:var(--muted-dark);margin-top:.9rem;text-align:center}
+.success{display:none;text-align:center;padding:2rem 1rem}
+.success.show{display:block}
+.success .check{width:64px;height:64px;margin:0 auto 1rem;border-radius:50%;background:rgba(65,194,138,.18);display:flex;align-items:center;justify-content:center}
+.success .check svg{width:34px;height:34px;stroke:var(--green)}
+.success h3{font-size:1.4rem;margin-bottom:.4rem}
+.success p{color:var(--muted-dark)}
+
+/* ---------- Footer ---------- */
+footer{background:var(--navy-900);color:#cfe0f5;padding:clamp(48px,7vw,72px) 0 2rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-grid h4{font-family:'Space Grotesk';font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;color:#fff;margin-bottom:1rem}
+.foot-grid a{display:block;color:var(--muted-dark);font-size:.94rem;margin-bottom:.55rem}
+.foot-grid a:hover{color:var(--cyan)}
+.foot-brand svg{height:54px;margin-bottom:1rem}
+.foot-brand p{color:var(--muted-dark);font-size:.92rem;max-width:34ch}
+.socials{display:flex;gap:.7rem;margin-top:1.1rem}
+.socials a{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center}
+.socials svg{width:18px;height:18px;stroke:#cfe0f5}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.6rem;color:var(--muted-dark);font-size:.82rem}
+
+/* mobile sticky CTA */
+.mobcta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:.7rem;gap:.6rem;background:rgba(10,26,60,.9);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.1)}
+.mobcta .btn{flex:1;justify-content:center;padding:.9rem}
+.mobcta .btn--ghost{flex:0 0 auto}
+
+/* cursor dot (desktop) */
+.cursor-dot{position:fixed;top:0;left:0;width:9px;height:9px;border-radius:50%;background:var(--cyan);pointer-events:none;z-index:99;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:screen}
+
+/* reveal default state */
+.reveal{opacity:0;transform:translateY(28px)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .hero-grid,.shift-grid,.final-grid{grid-template-columns:1fr}
+  .hero-card{max-width:440px;margin-inline:auto;width:100%}
+  .steps{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr;max-width:460px;margin-inline:auto}
+  .pcard.elevated{transform:none}
+  .pcard.elevated:hover{transform:translateY(-5px)}
+  .srow{grid-template-columns:1fr;gap:24px}
+  .srow.rev .stext{order:0}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .navlinks .link{display:none}
+  .nav-cta .callbtn{display:none}
+  .hamburger{display:flex}
+  .mobcta{display:flex}
+  .final-grid .final-copy{text-align:center}
+  .final .sub{margin-inline:auto}
+  .final .reassure{justify-content:center}
+}
+@media (max-width:560px){
+  .foot-grid{grid-template-columns:1fr}
+  .proof-strip{gap:.8rem}
+  .nav-cta .btn{display:none}
+  .tcard{width:300px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Brighter Energy Tasmania home">
+      <!-- Inline SVG logo recreated from brand mark -->
+      <svg viewBox="0 0 230 56" role="img" aria-label="Brighter Energy Tasmania">
+        <g fill="none" stroke="#2DBBD8" stroke-width="1.6" stroke-linecap="round">
+          <path d="M28 8a12 12 0 0 1 7 21.5c-1.6 1.3-2.3 2.6-2.4 4.2h-9.2c-.1-1.6-.8-2.9-2.4-4.2A12 12 0 0 1 28 8Z"/>
+          <path d="M24 37.5h8M25 40.5h6"/>
+          <path d="M28 30v-6m0 0c-2.4 0-3.4-2-3.2-4 2 .1 3.2 1.4 3.2 3.4Zm0-2.2c0-2 1.3-3.4 3.3-3.4.2 2-.8 3.7-3.3 3.4Z" stroke="#41C28A"/>
+          <g opacity=".9"><path d="M28 2v3M40 6l-2 2.4M16 6l2 2.4M45 17h-3M14 17h-3"/></g>
+        </g>
+        <text x="56" y="26" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="700" letter-spacing="2" fill="#ffffff">BRIGHTER</text>
+        <text x="56" y="43" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="700" letter-spacing="3.5" fill="#2DBBD8">ENERGY</text>
+        <text x="150" y="43" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="500" letter-spacing="3" fill="#9DB4D4">TAS</text>
+      </svg>
+    </a>
+    <nav class="navlinks" aria-label="Primary">
+      <a class="link" href="#how">How it works</a>
+      <a class="link" href="#services">Services</a>
+      <a class="link" href="#proof">Reviews</a>
+      <a class="link" href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="callbtn" href="tel:+61000000000" aria-label="Call Brighter Energy">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        Call us
+      </a>
+      <a class="btn" href="#quote">Get My Free Quote</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="overlay" id="overlay">
+  <button class="close" id="closeMenu" aria-label="Close menu">&times;</button>
+  <a href="#how">How it works</a>
+  <a href="#services">Services</a>
+  <a href="#proof">Reviews</a>
+  <a href="#faq">FAQ</a>
+  <a class="btn" href="#quote">Get My Free Quote</a>
+  <a class="callbtn" href="tel:+61000000000" style="color:#fff">Call us</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" id="h-eyebrow">Off-grid &amp; solar experts · Tasmania</span>
+      <h1 id="h-title">Cut your power bill with solar built for <span class="hl">Tasmanian</span> conditions.</h1>
+      <p class="sub" id="h-sub">Brighter Energy designs, installs and backs premium solar &amp; battery systems across Tasmania — with a clear quote in 24 hours and zero pushy sales.</p>
+      <a class="btn btn--lg" href="#quote" id="h-cta">Get My Free Quote →</a>
+      <div class="proof-strip" id="h-proof">
+        <span class="stars">★★★★★</span>
+        <span class="meta"><b>4.9</b> from local homeowners · 200+ Tassie roofs powered</span>
+      </div>
+      <div class="proof-badges">
+        <span class="badge">CEC Accredited</span>
+        <span class="badge">Tasmanian-owned</span>
+        <span class="badge">0% Energy Saver Loan available</span>
+      </div>
+    </div>
+    <div class="hero-card reveal">
+      <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80" alt="Solar panels installed on a residential rooftop at sunrise in Tasmania" loading="eager" onerror="imgFail(this,'Rooftop solar install')"/>
+      <div class="tag">Avg homeowner saves <b>$1,400+/yr</b> on power</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="section problem">
+  <div class="wrap lines">
+    <span class="eyebrow reveal">The honest truth</span>
+    <h2 class="reveal">Power prices keep climbing. Your roof keeps doing nothing about it.</h2>
+    <p class="reveal">Every winter the bill lands a little heavier. Meanwhile the sun hits your roof all day for free.</p>
+    <p class="reveal">And the quotes you've chased? A salesperson, a catch, or radio silence. It shouldn't be this hard to go solar.</p>
+  </div>
+</section>
+
+<!-- ============ THE SHIFT ============ -->
+<section class="section shift">
+  <div class="wrap shift-grid">
+    <div class="shift-copy">
+      <span class="eyebrow reveal">The shift</span>
+      <h2 class="reveal">Solar made simple, sized for your home.</h2>
+      <p class="reveal">No jargon. No bundles you don't need. Just one honest assessment, one system designed around your roof and your bills, and one local team that's still here long after switch-on.</p>
+      <ul>
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="#41C28A" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> A system matched to your actual usage, not a sales target</li>
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="#41C28A" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Clear, itemised quote within 24 hours</li>
+        <li class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke="#41C28A" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Built to handle Tasmanian weather, year-round</li>
+      </ul>
+    </div>
+    <div class="shift-media reveal">
+      <img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=900&q=80" alt="Technician inspecting a home solar power system" loading="lazy" onerror="imgFail(this,'System design &amp; install')"/>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section how" id="how">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal">How it works</span>
+      <h2 class="reveal">Three steps from quote to switched on.</h2>
+      <p class="reveal">No pressure at any stage. You stay in control the whole way through.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="num">01</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>Free assessment</h3>
+        <p>We review your roof, your bills and your goals — on-site or online. No obligation, no hard sell.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">02</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+        <h3>Custom design</h3>
+        <p>A system sized to your home and quoted in plain English within 24 hours — including payback and finance options.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">03</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+        <h3>Clean install</h3>
+        <p>CEC-accredited local installers. Tidy workmanship, fully compliant, switched on and saving — usually in a day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOCIAL PROOF ============ -->
+<section class="section proof" id="proof">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal">Loved by Tasmanian homeowners</span>
+      <h2 class="reveal">Real systems. Real savings. Real locals.</h2>
+    </div>
+    <p class="pullquote reveal"><span class="q">“</span>Honestly the easiest tradies we've ever dealt with. Quote made sense, install was spotless, and our bill dropped the very first quarter.<span class="q">”</span></p>
+  </div>
+  <div class="marquee" aria-label="Customer testimonials">
+    <div class="marquee-track" id="mtrack">
+      <!-- set duplicated in JS for seamless loop -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services" id="services">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal">What we do</span>
+      <h2 class="reveal">Solar, storage and off-grid — done properly.</h2>
+    </div>
+
+    <div class="srow">
+      <div class="stext">
+        <span class="eyebrow reveal">Residential solar</span>
+        <h3 class="reveal">Power your home from your own roof.</h3>
+        <p class="reveal">Premium panels and inverters, designed around your usage so you keep more of what you generate and buy less from the grid.</p>
+        <div class="feat">
+          <span class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Tier-1 panels, 25-year performance warranty</span>
+          <span class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Smart monitoring from your phone</span>
+        </div>
+      </div>
+      <div class="smedia reveal"><img src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=900&q=80" alt="Modern home with rooftop solar panels" loading="lazy" onerror="imgFail(this,'Residential solar')"/></div>
+    </div>
+
+    <div class="srow rev">
+      <div class="stext">
+        <span class="eyebrow reveal">Battery storage</span>
+        <h3 class="reveal">Store the sun. Use it after dark.</h3>
+        <p class="reveal">Add a battery and run your home on solar into the evening — with backup that keeps the lights on when the grid drops out.</p>
+        <div class="feat">
+          <span class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Blackout backup for essential circuits</span>
+          <span class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Maximise self-consumption, slash peak rates</span>
+        </div>
+      </div>
+      <div class="smedia reveal"><img src="https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=900&q=80" alt="Home battery storage unit mounted on a wall" loading="lazy" onerror="imgFail(this,'Battery storage')"/></div>
+    </div>
+
+    <div class="srow">
+      <div class="stext">
+        <span class="eyebrow reveal">Off-grid &amp; support</span>
+        <h3 class="reveal">Living remote? We've got you covered.</h3>
+        <p class="reveal">Stand-alone power systems for shacks, farms and remote Tasmanian properties — plus servicing and repairs to keep any system humming.</p>
+        <div class="feat">
+          <span class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Full off-grid design &amp; install</span>
+          <span class="reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Servicing, fault-finding &amp; upgrades</span>
+        </div>
+      </div>
+      <div class="smedia reveal"><img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=900&q=80" alt="Off-grid solar array beside a rural property" loading="lazy" onerror="imgFail(this,'Off-grid systems')"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS / PACKAGES ============ -->
+<section class="section pkg">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal">Find your fit</span>
+      <h2 class="reveal">Systems for every Tasmanian home.</h2>
+      <p class="reveal">Every quote is tailored — these are the most common starting points.</p>
+    </div>
+    <div class="cards">
+      <div class="pcard reveal">
+        <h3>Starter Solar</h3>
+        <p class="for">Smaller homes &amp; units</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> 6.6kW solar system</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Tier-1 panels + quality inverter</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Phone monitoring app</li>
+        </ul>
+        <a class="btn" href="#quote">Get pricing</a>
+      </div>
+      <div class="pcard elevated reveal">
+        <span class="pop">Most popular</span>
+        <h3>Family Home</h3>
+        <p class="for">Most Tasmanian households</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> 10kW solar, battery-ready</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Optimised for winter generation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> 0% Energy Saver Loan eligible</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Priority local support</li>
+        </ul>
+        <a class="btn" href="#quote">Get my free quote</a>
+      </div>
+      <div class="pcard reveal">
+        <h3>Solar + Battery</h3>
+        <p class="for">Energy independence</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> 10kW+ solar with home battery</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Blackout backup included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Off-grid options available</li>
+        </ul>
+        <a class="btn" href="#quote">Get pricing</a>
+      </div>
+    </div>
+    <p class="finetip reveal">Tasmanian homeowners may access the State Government's 0% interest Energy Saver Loan. Ask us how it applies to your quote.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal">Good questions</span>
+      <h2 class="reveal">Everything you're probably wondering.</h2>
+    </div>
+    <div class="acc" id="acc">
+      <div class="item"><button class="q">Does solar actually work in Tasmania's climate?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="a"><p>Absolutely. Tasmania gets strong solar yields across the warmer months and usable generation year-round. We size systems specifically for local conditions so you get the best return through every season.</p></div></div>
+      <div class="item"><button class="q">How much can I save on my power bill?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="a"><p>It depends on your usage and system size, but most households we install for save well over $1,000 a year. Your custom quote includes a clear payback estimate so you know exactly what to expect.</p></div></div>
+      <div class="item"><button class="q">What's the 0% Energy Saver Loan?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="a"><p>It's a Tasmanian Government interest-free loan scheme that can cover eligible solar and battery installs, letting you spread the cost with no interest. We'll tell you whether your system qualifies and help with the paperwork.</p></div></div>
+      <div class="item"><button class="q">Is a battery worth it for my home?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="a"><p>A battery lets you use your solar after dark and adds blackout backup. Whether it pays off depends on your usage pattern — we'll model it honestly in your quote rather than upselling you.</p></div></div>
+      <div class="item"><button class="q">How long does installation take?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="a"><p>Most residential installs are completed in a single day by our accredited local crew. We handle grid paperwork and approvals so the process is hands-off for you.</p></div></div>
+      <div class="item"><button class="q">What warranties do I get?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="a"><p>Our panels carry up to a 25-year performance warranty, with manufacturer warranties on inverters and batteries, plus our own workmanship guarantee. We're local, so support is a phone call away.</p></div></div>
+      <div class="item"><button class="q">Do you service off-grid and rural properties?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="a"><p>Yes — off-grid is our specialty. We design stand-alone power systems for shacks, farms and remote properties right across Tasmania, and service existing systems too.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA + FORM ============ -->
+<section class="section final" id="quote">
+  <div class="ring"></div>
+  <div class="wrap final-grid">
+    <div class="final-copy">
+      <span class="eyebrow reveal">Get started</span>
+      <h2 class="reveal">Get your free, no-pressure <span class="hl">solar quote</span> in 24 hours.</h2>
+      <p class="sub reveal">Tell us where to reach you. A local Brighter Energy expert will get back to you with clear, tailored numbers — not a sales pitch.</p>
+      <div class="reassure reveal">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> No obligation</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Reply within 24 hrs</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Tasmanian-owned</span>
+      </div>
+    </div>
+
+    <div class="formcard reveal">
+      <form id="quoteForm" novalidate>
+        <h3>Request my free quote</h3>
+        <p class="fnote">Takes 30 seconds. We'll do the rest.</p>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" autocomplete="name" placeholder="Jane Smith" required />
+        </div>
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="0400 000 000" required />
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" autocomplete="email" inputmode="email" placeholder="jane@email.com" required />
+        </div>
+        <!-- honeypot anti-spam -->
+        <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button class="btn btn--lg" type="submit">Get My Free Quote →</button>
+        <p class="legal">By submitting you agree to be contacted about your solar enquiry. We never share your details.</p>
+      </form>
+      <div class="success" id="success" role="status" aria-live="polite">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Thanks — you're in! ☀️</h3>
+        <p>A Brighter Energy expert will be in touch within 24 hours with your tailored quote.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <svg viewBox="0 0 230 56" role="img" aria-label="Brighter Energy Tasmania">
+          <g fill="none" stroke="#2DBBD8" stroke-width="1.6" stroke-linecap="round">
+            <path d="M28 8a12 12 0 0 1 7 21.5c-1.6 1.3-2.3 2.6-2.4 4.2h-9.2c-.1-1.6-.8-2.9-2.4-4.2A12 12 0 0 1 28 8Z"/>
+            <path d="M24 37.5h8M25 40.5h6"/>
+            <path d="M28 30v-6m0 0c-2.4 0-3.4-2-3.2-4 2 .1 3.2 1.4 3.2 3.4Zm0-2.2c0-2 1.3-3.4 3.3-3.4.2 2-.8 3.7-3.3 3.4Z" stroke="#41C28A"/>
+          </g>
+          <text x="56" y="26" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="700" letter-spacing="2" fill="#ffffff">BRIGHTER</text>
+          <text x="56" y="43" font-family="Space Grotesk, sans-serif" font-size="17" font-weight="700" letter-spacing="3.5" fill="#2DBBD8">ENERGY</text>
+        </svg>
+        <p>Your off-grid and solar experts — powering Tasmanian homes with clean, reliable energy.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="#services">Residential solar</a>
+        <a href="#services">Battery storage</a>
+        <a href="#services">Off-grid systems</a>
+        <a href="#services">Servicing &amp; repairs</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+61000000000">Call: 0400 000 000</a>
+        <a href="mailto:hello@brighterenergy.com.au">hello@brighterenergy.com.au</a>
+        <a href="#quote">Get a free quote</a>
+        <a href="#top">Servicing all of Tasmania</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Brighter Energy Tasmania. All rights reserved. · ABN 00 000 000 000</span>
+      <span>Hobart · Launceston · Devonport · Statewide</span>
+    </div>
+  </div>
+</footer>
+
+<!-- mobile sticky CTA -->
+<div class="mobcta">
+  <a class="btn" href="#quote">Free Quote</a>
+  <a class="btn btn--ghost" href="tel:+61000000000" aria-label="Call now">Call</a>
+</div>
+
+<div class="cursor-dot" id="cursor" aria-hidden="true"></div>
+
+<script>
+/* ---------- image fallback ---------- */
+function imgFail(img,label){
+  var d=document.createElement('div');
+  d.className='imgfallback';
+  d.textContent=label+' — add your photo here';
+  img.replaceWith(d);
+}
+
+/* ---------- year ---------- */
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ---------- header scroll blur ---------- */
+const header=document.getElementById('header');
+addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>80);});
+
+/* ---------- mobile menu ---------- */
+const overlay=document.getElementById('overlay'),burger=document.getElementById('hamburger');
+function closeM(){overlay.classList.remove('open');burger.setAttribute('aria-expanded','false');}
+burger.onclick=()=>{overlay.classList.add('open');burger.setAttribute('aria-expanded','true');};
+document.getElementById('closeMenu').onclick=closeM;
+overlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeM));
+
+/* ---------- FAQ accordion ---------- */
+document.querySelectorAll('#acc .item').forEach(item=>{
+  const q=item.querySelector('.q'),a=item.querySelector('.a');
+  q.addEventListener('click',()=>{
+    const open=item.classList.contains('open');
+    document.querySelectorAll('#acc .item').forEach(i=>{i.classList.remove('open');i.querySelector('.a').style.maxHeight=null;});
+    if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+  });
+});
+
+/* ---------- testimonials marquee (duplicated for seamless loop) ---------- */
+const testimonials=[
+  {n:'Sarah M.',r:'Hobart',t:'Quote made sense, install was spotless, bill dropped the first quarter. Couldn\'t fault them.'},
+  {n:'Dave & Kel',r:'Launceston',t:'Finally a solar mob that didn\'t pressure us. Local, honest, brilliant work.'},
+  {n:'Priya R.',r:'Kingston',t:'They sized it for our actual usage instead of overselling. Saving more than they promised.'},
+  {n:'Tom H.',r:'Devonport',t:'Off-grid setup at our shack is faultless. These guys know rural Tassie properties.'},
+  {n:'Megan L.',r:'Glenorchy',t:'Battery + solar means we barely touch the grid now. Backup kicked in during a blackout too.'},
+  {n:'Andrew P.',r:'Burnie',t:'Clear numbers, no jargon, switched on in a day. Exactly what was promised.'}
+];
+const track=document.getElementById('mtrack');
+function card(t){
+  return `<div class="tcard"><div class="stars">★★★★★</div><p>"${t.t}"</p><div class="who"><div class="av">${t.n[0]}</div><div><b>${t.n}</b><span>${t.r}, TAS</span></div></div></div>`;
+}
+track.innerHTML=(testimonials.map(card).join(''))+(testimonials.map(card).join(''));
+
+/* ---------- form ---------- */
+document.getElementById('quoteForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  if(this.company.value){return;} // honeypot
+  const name=this.name.value.trim(),phone=this.phone.value.trim(),email=this.email.value.trim();
+  if(!name||!phone||!email){this.reportValidity&&this.reportValidity();return;}
+  /* TODO: POST to your CRM / GoHighLevel webhook here, e.g.:
+     fetch('https://YOUR-GHL-WEBHOOK', {method:'POST', body:JSON.stringify({name,phone,email})}); */
+  /* Google Ads conversion (replace IDs):
+     if(window.gtag){ gtag('event','conversion',{'send_to':'AW-XXXXXX/XXXX'}); } */
+  this.style.display='none';
+  document.getElementById('success').classList.add('show');
+});
+
+/* ---------- cursor dot (desktop only) ---------- */
+const dot=document.getElementById('cursor');
+if(matchMedia('(pointer:fine)').matches){
+  addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';});
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{dot.style.width='26px';dot.style.height='26px';dot.style.background='rgba(70,214,240,.4)';});
+    el.addEventListener('mouseleave',()=>{dot.style.width='9px';dot.style.height='9px';dot.style.background='var(--cyan)';});
+  });
+}else{dot.style.display='none';}
+
+/* ---------- GSAP animations ---------- */
+window.addEventListener('load',()=>{
+  if(typeof gsap==='undefined')return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero entry stagger
+  gsap.timeline({defaults:{ease:'power3.out'}})
+    .from('#h-eyebrow',{y:20,opacity:0,duration:.5})
+    .from('#h-title',{y:28,opacity:0,duration:.6},'-=.25')
+    .from('#h-sub',{y:24,opacity:0,duration:.55},'-=.35')
+    .from('#h-cta',{y:20,opacity:0,duration:.5},'-=.35')
+    .from('#h-proof',{y:18,opacity:0,duration:.5},'-=.3')
+    .from('.hero-card',{y:40,opacity:0,duration:.7,clipPath:'inset(8% 8% 8% 8%)'},'-=.55');
+
+  // Scroll reveals
+  gsap.utils.toArray('.reveal').forEach(el=>{
+    if(el.closest('.hero'))return;
+    gsap.to(el,{y:0,opacity:1,duration:.7,ease:'power3.out',
+      scrollTrigger:{trigger:el,start:'top 85%',once:true}});
+  });
+
+  // hero blob parallax to mouse
+  addEventListener('mousemove',e=>{
+    const x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);
+    gsap.to('.b1',{x:x*40,y:y*40,duration:.8});
+    gsap.to('.b2',{x:x*-30,y:y*-30,duration:.8});
+  });
+});
+</script>
+</body>
+</html>
