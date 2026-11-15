@@ -1,1 +1,2 @@
-# brighter-energy-tasmania
+# Brighter Energy Tasmania
+Demo website built by NetWorth Digital.
